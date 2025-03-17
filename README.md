@@ -1,5 +1,22 @@
 # JAVA
 
+## TEMA-1
+
+### Ejercicios:
+
+1. Enunciado de :
+   - [Enlace de resolución:]()
+2. Enunciado de :
+   - [Enlace de resolución]()
+3. Enunciado de :
+   - [Enlace de resolución]()
+4. Enunciado de :
+   - [Enlace de resolución]()
+5. Enunciado de :
+   - [Enlace de resolución]()
+6. Enunciado de :
+   - [Enlace de resolución]()
+
 ## TEMA-2
 
 ### Ejercicios:
