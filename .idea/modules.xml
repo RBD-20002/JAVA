@@ -2,19 +2,19 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Albumnes_1/Albumnes_1.iml" filepath="$PROJECT_DIR$/Albumnes_1/Albumnes_1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Biblioteca_1/Biblioteca_1.iml" filepath="$PROJECT_DIR$/Biblioteca_1/Biblioteca_1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Carta_2/Carta_2.iml" filepath="$PROJECT_DIR$/Carta_2/Carta_2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Examen_1/Examen_1.iml" filepath="$PROJECT_DIR$/Examen_1/Examen_1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Figura_2/Figura_2.iml" filepath="$PROJECT_DIR$/Figura_2/Figura_2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Figuras_2/Figuras_2.iml" filepath="$PROJECT_DIR$/Figuras_2/Figuras_2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/GestorTareas_1/GestorTareas_1.iml" filepath="$PROJECT_DIR$/GestorTareas_1/GestorTareas_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1_Albumnes/1_Albumnes.iml" filepath="$PROJECT_DIR$/1_Albumnes/1_Albumnes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1_Biblioteca/1_Biblioteca.iml" filepath="$PROJECT_DIR$/1_Biblioteca/1_Biblioteca.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1_Examen/1_Examen.iml" filepath="$PROJECT_DIR$/1_Examen/1_Examen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1_GestorTareas/1_GestorTareas.iml" filepath="$PROJECT_DIR$/1_GestorTareas/1_GestorTareas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1_Personas/1_Personas.iml" filepath="$PROJECT_DIR$/1_Personas/1_Personas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1_VideoJuegos/1_VideoJuegos.iml" filepath="$PROJECT_DIR$/1_VideoJuegos/1_VideoJuegos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2_Carta/2_Carta.iml" filepath="$PROJECT_DIR$/2_Carta/2_Carta.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2_Figura/2_Figura.iml" filepath="$PROJECT_DIR$/2_Figura/2_Figura.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2_Figuras/2_Figuras.iml" filepath="$PROJECT_DIR$/2_Figuras/2_Figuras.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2_Pregunta/2_Pregunta.iml" filepath="$PROJECT_DIR$/2_Pregunta/2_Pregunta.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2_SuperMercado/2_SuperMercado.iml" filepath="$PROJECT_DIR$/2_SuperMercado/2_SuperMercado.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2_Vehiculo/2_Vehiculo.iml" filepath="$PROJECT_DIR$/2_Vehiculo/2_Vehiculo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/JAVA.iml" filepath="$PROJECT_DIR$/.idea/JAVA.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Personas_1/Personas_1.iml" filepath="$PROJECT_DIR$/Personas_1/Personas_1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Pregunta_2/Pregunta_2.iml" filepath="$PROJECT_DIR$/Pregunta_2/Pregunta_2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SuperMercado_2/SuperMercado_2.iml" filepath="$PROJECT_DIR$/SuperMercado_2/SuperMercado_2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Vehiculo_2/Vehiculo_2.iml" filepath="$PROJECT_DIR$/Vehiculo_2/Vehiculo_2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Videojuegos_1/Videojuegos_1.iml" filepath="$PROJECT_DIR$/Videojuegos_1/Videojuegos_1.iml" />
     </modules>
   </component>
 </project>
