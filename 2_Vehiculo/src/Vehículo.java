@@ -15,5 +15,11 @@ public class Vehiculo{
      public void setMarca(String Marca){
          this.Marca = marca;
      }
-
+     
+     public getModelo() {
+         return Modelo;
+     }
+     public void setModelo(String Modelo){
+         this.Modelo = modelo
+     }
 }
