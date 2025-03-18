@@ -9,7 +9,6 @@ public class Vehiculo{
          this.modelo = modelo;
      }
 
-
      public getMarca() {
          return Marca;
      }
