@@ -20,7 +20,7 @@
 ## TEMA-2
 
 1. **Primer Ejercicio**
-   - [Enlace de resolución](https://github.com/RBD-20002/JAVA/tree/main/2_Vehiculo)
+   - [Enlace de solución](https://github.com/RBD-20002/JAVA/tree/main/2_Vehiculo)
 2. **Segundo Ejercicio**
    - [Enlace de resolución](https://github.com/RBD-20002/JAVA/tree/main/2_Figura)
 3. **Tercer Ejercicio**
