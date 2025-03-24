@@ -5,7 +5,6 @@ import CreacionInmueble.CrearCasa;
 import CreacionInmueble.CrearDepartamento;
 import CreacionInmueble.CrearLocalComercial;
 import Inmueble.Inmueble;
-
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -83,7 +82,6 @@ public class Gestion {
 
         int indice = -1;
         boolean indiceValido = false;
-
         while (!indiceValido) {
             try {
                 System.out.println("Elige el inmueble: ");
@@ -132,7 +130,7 @@ public class Gestion {
                         CrearCasa crearCasa = new CrearCasa();
                         Inmueble casa = crearCasa.crearInmueble();
                         inmuebles.add(casa);
-                        System.out.println();
+                        System.out.println("Casa registrada correctamente");
                     }
                     case 2: {
                         CrearDepartamento crearDepartamento = new CrearDepartamento();
