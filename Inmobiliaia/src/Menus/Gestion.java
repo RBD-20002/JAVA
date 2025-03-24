@@ -15,13 +15,13 @@ public class Gestion {
     LinkedList<Inmueble> inmuebles = new LinkedList<>();
     Scanner sc = new Scanner(System.in);
 
-    public void menu1() {
+    public static void menu1() {
         System.out.println("|-----INMOBILIARIA-----|");
         System.out.println("|1. Registrar inmueble |"); /*H*/
         System.out.println("|2. Mostrar inmuebles  |"); /*H*/
         System.out.println("|3. Cambiar estado     |"); /*H*/
         System.out.println("|4. Eliminar inmueble  |"); /*H*/
-        System.out.println("|5. Mostrar historial  |");
+        System.out.println("|5. Filtrar inmueble   |");
         System.out.println("|0. Salir              |"); /*H*/
     }
 

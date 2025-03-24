@@ -5,7 +5,7 @@ public class Departamento extends Inmueble {
     private int piso;
     private boolean expensas;
 
-    public Departamento(String ubicacion, double precio, Inmueble.Inmueble.Estado estado, int piso, boolean expensas) {
+    public Departamento(String ubicacion, double precio, Estado estado, int piso, boolean expensas) {
         super(ubicacion, precio, estado);
         this.piso = piso;
         this.expensas = expensas;

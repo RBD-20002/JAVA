@@ -5,7 +5,7 @@ public class Casa extends Inmueble {
     private int numCuartos;
     private double metraje;
 
-    public Casa(String ubicacion, double precio, Inmueble.Estado estado, int numCuartos, double metraje) {
+    public Casa(String ubicacion, double precio, Estado estado, int numCuartos, double metraje) {
         super(ubicacion, precio, estado);
         this.numCuartos = numCuartos;
         this.metraje = metraje;
