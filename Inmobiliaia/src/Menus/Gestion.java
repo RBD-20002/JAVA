@@ -1,6 +1,9 @@
 package Menus;
 
 import Clientes.Cliente;
+import CreacionInmueble.CrearCasa;
+import CreacionInmueble.CrearDepartamento;
+import CreacionInmueble.CrearLocalComercial;
 import Inmueble.Inmueble;
 
 import java.util.LinkedList;
@@ -14,7 +17,7 @@ public class Gestion {
 
     public void menu1() {
         System.out.println("|-----INMOBILIARIA-----|");
-        System.out.println("|1. Registrar inmueble |");
+        System.out.println("|1. Registrar inmueble |"); /*H*/
         System.out.println("|2. Mostrar inmuebles  |"); /*H*/
         System.out.println("|3. Cambiar estado     |"); /*H*/
         System.out.println("|4. Eliminar inmueble  |"); /*H*/
@@ -30,21 +33,31 @@ public class Gestion {
         System.out.println("|4. Cancelar    |"); /*H*/
     }
 
-    public void vacio() {
+    public void menu3() {
+        System.out.println("|----TIPOS DE INMUEBLES----|");
+        System.out.println("|1. Casa                   |"); /*H*/
+        System.out.println("|2. Departamento           |"); /*H*/
+        System.out.println("|3. Local Comercial        |"); /*H*/
+        System.out.println("|0. Volver a atras         |"); /*H*/
+    }
+
+    public boolean vacio() {
         if (inmuebles.isEmpty()) {
-            System.out.println("No hay inmuebles");
+            System.out.println("No hay inmuebles.");
+            return true;
         }
+        return false;
     }
 
     public void mostrarInmuebles() {
-        vacio();
+        if (vacio()) return;
         for (int i = 0; i < inmuebles.size(); i++) {
             System.out.println((i + 1) + " " + inmuebles.get(i).toString());
         }
     }
 
     public void eliminarInmueble() {
-        vacio();
+        if (vacio()) return;
         mostrarInmuebles();
 
         int indice = -1;
@@ -59,13 +72,13 @@ public class Gestion {
             } catch (NumberFormatException e) {
                 System.out.println("ERROR: opcion invalida");
             }
-            inmuebles.remove(indice - 1);
-            System.out.println("Eliminado correctamente");
         }
+        inmuebles.remove(indice - 1);
+        System.out.println("Eliminado correctamente");
     }
 
     public void cambiarEstadoInmueble() {
-        vacio();
+        if (vacio()) return;
         mostrarInmuebles();
 
         int indice = -1;
@@ -86,7 +99,7 @@ public class Gestion {
     }
 
     private void elegirEstado(int indice) {
-        Inmueble elegido = inmuebles.get(indice - 1);
+        Inmueble elegido = inmuebles.get(indice);
         int opcion;
 
         do {
@@ -107,33 +120,40 @@ public class Gestion {
         } while (opcion != 4);
     }
 
-    private double leerPrecio() {
-
-        boolean precioValido = false;
-        double precio = 0;
-
-        while (!precioValido) {
+    public void registrarInmueble() {
+        System.out.println("|--ELIGE INMUEBLE A CREAR--|");
+        menu3();
+        int opcion = -1;
+        do {
             try {
-                System.out.println("Introduce el precio: ");
-                precio = Double.parseDouble(sc.nextLine());
-                if (precio < 1) {
-                    precioValido = true;
-                } else System.out.println("Precio invalido");
+                opcion = Integer.parseInt(sc.nextLine());
+                switch (opcion) {
+                    case 1: {
+                        CrearCasa crearCasa = new CrearCasa();
+                        Inmueble casa = crearCasa.crearInmueble();
+                        inmuebles.add(casa);
+                        System.out.println();
+                    }
+                    case 2: {
+                        CrearDepartamento crearDepartamento = new CrearDepartamento();
+                        Inmueble departamento = crearDepartamento.crearInmueble();
+                        inmuebles.add(departamento);
+                        System.out.println("Departamento registrado correctamente.");
+                    }
+                    case 3: {
+                        CrearLocalComercial crearLocalComercial = new CrearLocalComercial();
+                        Inmueble localComercial = crearLocalComercial.crearInmueble();
+                        inmuebles.add(localComercial);
+                        System.out.println("Local comercial registrado correctamente.");
+                    }
+                    case 0:
+                        System.out.println("Volviendo atras");
+                    default:
+                        System.out.println("Opcion invalida");
+                }
             } catch (NumberFormatException e) {
                 System.out.println("ERROR: Dato invalido");
             }
-        }
-        return precio;
+        } while (opcion != 0);
     }
-
-    private String leerDireccion() {
-        while (true) {
-            System.out.println("Introduce la direccion: ");
-            String direccion = sc.nextLine();
-            if (!direccion.isBlank()) {
-                return direccion;
-            } else System.out.println("La direccion no puede estar vacia");
-        }
-    }
-
 }
