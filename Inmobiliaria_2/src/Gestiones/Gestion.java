@@ -1,22 +1,21 @@
 package Gestiones;
-import Inmuebles.Casa;
-import Inmuebles.Inmueble;
+
 import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Gestion {
 
     Scanner sc = new Scanner(System.in);
-    LinkedList<Inmueble> inmuebles = new LinkedList<>();
+    LinkedList<Inmuebles.Inmueble> inmuebles = new LinkedList<>();
 
     public void menu1() {
         System.out.println("""
                 |---------INMOBILIARIA---------|
-                |1. Registrar Inmueble         |
-                |2. Poner Inmueble en venta    |
-                |3. Poner Inmueble en alquiler |
+                |1. Registrar Inmuebles.Inmueble         |
+                |2. Poner Inmuebles.Inmueble en venta    |
+                |3. Poner Inmuebles.Inmueble en alquiler |
                 |4. Listar Inmuebles           | /*H*/
-                |5. Eliminar Inmueble          | /*H*/
+                |5. Eliminar Inmuebles.Inmueble          | /*H*/
                 |6. Salir del programa         | /*H*/
                 |------------------------------|
                 """);
@@ -24,8 +23,8 @@ public class Gestion {
     public void menu2() {
         System.out.println("""
                 |-----CLASES INMUEBLE-----|
-                |1. Casa                  |
-                |2. Piso                  |
+                |1. Inmuebles.Casa                  |
+                |2. Inmuebles.Piso                  |
                 |3. Otro                  |
                 |4. Voler al menu inicial |
                 |-------------------------|
@@ -73,7 +72,7 @@ public class Gestion {
             }
         }
         inmuebles.remove(indice -1);
-        System.out.println("Inmueble eliminado correctamente");
+        System.out.println("Inmuebles.Inmueble eliminado correctamente");
     }
 
     public void RegistrarInmueble() {
