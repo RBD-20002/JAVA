@@ -26,9 +26,4 @@ public class InfoMenu {
                 """);
     }
 
-    public static void menu3() {
-        System.out.println("""
-                ||
-                """);
-    }
 }
