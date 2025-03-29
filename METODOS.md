@@ -86,7 +86,7 @@
         - Pila/Cola (Queue).
 
 2. **Metodos:**
-   
+    ``````
 ## **4. List:**
 
 1. **Caracteristicas:**
