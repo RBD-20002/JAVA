@@ -86,7 +86,32 @@
         - Pila/Cola (Queue).
 
 2. **Metodos:**
-    ``````
+    ```Java
+    //Añade un elemento al final
+   add(e)
+   //EJEMPLO
+   list.add(1000)
+   
+   //Añade un elemento al inicio
+   addFirst(e)
+   //EJEMPLO
+   list.addFirst("A")
+   
+   //Elimina el ultimo elemento
+   removeLast()
+   //EJEMPLO
+   list.removeLast()
+   
+   //Retorna el elemento en la posicion
+   get(index)   
+   //EJEMPLO
+   String s = list.get(0)
+   
+   //Retorna el primer elemento sin eliminarlo
+   peek()
+   //EJEMPLO
+   Object first = list.peek()
+    ```
 ## **4. List:**
 
 1. **Caracteristicas:**
@@ -122,3 +147,71 @@
    //EJEMPLO
    List sub = lista.subList(0,2)
    ```
+
+## **5. HashSet:**
+
+1. **Caracteristicas:**
+    - **No permite duplicados:** Solo almacena elementos únicos.
+    - **No ordenado:** Para orden usar TreeSet.
+
+2. **Metodos:**
+    ```Java
+   //Añade un elemento (ignora si ya existe)
+   add(e)
+   //EJEMPLO
+   set.add(e)
+   
+   //Elimina un elemento
+   remove(e)
+   //EJEMPLO
+   set.remove(e)
+   
+   //Verifica si un elemento existe
+   contains(e)
+   //EJEMPLO
+   if(set.contains("c"))
+    
+   //Retorna un iterador para recorrer los elementos
+   iterator()
+   //EJEMPLO
+   for(String s : set)
+   
+   //Retorna el numero de elementos
+   size()
+   //EJEMPLO
+   int count = set.size()
+    ```
+
+## **6. HashQueue:**
+
+1. **Caracteristicas:**
+    - **Orden por prioridad:** Por defecto orden ascendente (se puede personalizar).
+    - **No es estrictamente FIFO:** Depende de la prioridad.
+
+2. **Metodos:**
+    ```Java
+    //Añade un elemento (lanza excepcion si falla)
+   add(e)
+   //EJEMPLO
+   pq.add(5)
+   
+   //Añade un elemento (retorna false si falla)
+   offter(e)
+   //EJEMPLO
+   pq.offter(10)
+   
+   //Elimina y retorna el elemento con mayor prioridad
+   poll()
+    //EJEMPLO
+   int num = pq.poll()
+   
+   //Retorna el elemento con mayor prioridad sin eliminarlo
+   peek()
+   //EJEMPLO
+   int top = pq.peek()
+   
+   // Retorna el comparador de orden (si es personalizado
+   comparator()
+   //EJEMPLO
+   Comparator<?> cmp = pq.comparator()
+    ```
