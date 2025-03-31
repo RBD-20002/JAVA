@@ -19,7 +19,6 @@ public class Taxi extends TransportePublico {
         this.tarifaBase = tarifaBase;
     }
 
-    @Override
     public double calcularTarifa() {
         double tarifa = tarifaBase;
         boolean tarifaValida = false;
