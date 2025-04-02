@@ -216,8 +216,7 @@
    Comparator<?> cmp = pq.comparator()
     ```
 
-
-    classDiagram
+    ```  classDiagram
     class Horario {
         <<enumeration>>
         LUNES
@@ -300,4 +299,5 @@
     OcupacionAula "1" -- "1" Aula
     Ciclo "1" -- "1..*" Profesor : tutores
 
-    Profesor "1" -- "0..1" Ciclo : tutor_de
+    Profesor "1" -- "0..1" Ciclo : tutor_de```
+  
