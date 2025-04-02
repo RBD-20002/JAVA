@@ -215,3 +215,89 @@
    //EJEMPLO
    Comparator<?> cmp = pq.comparator()
     ```
+
+
+    classDiagram
+    class Horario {
+        <<enumeration>>
+        LUNES
+        MARTES
+        MIERCOLES
+        JUEVES
+        VIERNES
+    }
+
+    class Hora {
+        <<enumeration>>
+        PRIMERA
+        SEGUNDA
+        TERCERA
+        CUARTA
+        QUINTA
+        SEXTA
+    }
+
+    class TipoCiclo {
+        <<enumeration>>
+        GRADO_SUPERIOR
+        GRADO_MEDIO
+        INICIACION_PROFESIONAL
+    }
+
+    class Aula {
+        -codigoAula: String
+        -nombre: String
+        -numero: int
+        -metros: float
+        +estaDisponible(dia: Horario, hora: Hora) boolean
+    }
+
+    class Asignatura {
+        -nombre: String
+        -codigoEuropeo: String
+        -curso: int
+        +agregarRequisito(Asignatura) void
+        +eliminarRequisito(Asignatura) void
+    }
+
+    class AsignaturaImpartida {
+        -codigoInterno: String
+        -fechaInicio: Date
+        -fechaFin: Date
+    }
+
+    class Ciclo {
+        -nombre: String
+        -tipo: TipoCiclo
+        -codigoInterno: String
+    }
+
+    class Profesor {
+        -nombre: String
+        -direccion: String
+        -telefono: String
+        -email: String
+        -dni: String
+        -nss: String
+        -codigoProfesor: String
+        -antiguedad: int
+        +esTutor() boolean
+        +antiguedadComoTutor() int
+    }
+
+    class OcupacionAula {
+        -dia: Horario
+        -hora: Hora
+        -fechaInicio: Date
+        -fechaFin: Date
+    }
+
+    Asignatura "1" *-- "0..*" Asignatura : requisitos
+    Asignatura "1" -- "1..*" AsignaturaImpartida
+    AsignaturaImpartida "1" -- "1" Ciclo
+    AsignaturaImpartida "1" -- "1..*" Profesor
+    AsignaturaImpartida "1" -- "1" OcupacionAula
+    OcupacionAula "1" -- "1" Aula
+    Ciclo "1" -- "1..*" Profesor : tutores
+
+    Profesor "1" -- "0..1" Ciclo : tutor_de
