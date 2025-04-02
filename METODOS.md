@@ -218,7 +218,7 @@
   
 ```mermaid
 classDiagram
-    class Horario {
+    class DiaSemana {
         <<enumeration>>
         LUNES
         MARTES
@@ -227,14 +227,14 @@ classDiagram
         VIERNES
     }
 
-    class Hora {
+    class HoraLectiva {
         <<enumeration>>
-        PRIMERA
-        SEGUNDA
-        TERCERA
-        CUARTA
-        QUINTA
-        SEXTA
+        HORA_1
+        HORA_2
+        HORA_3
+        HORA_4
+        HORA_5
+        HORA_6
     }
 
     class TipoCiclo {
@@ -245,31 +245,32 @@ classDiagram
     }
 
     class Aula {
-        -codigoAula: String
+        -codigo: String
         -nombre: String
         -numero: int
-        -metros: float
-        +estaDisponible(dia: Horario, hora: Hora) boolean
+        -metrosCuadrados: float
+        +estaDisponible(dia: DiaSemana, hora: HoraLectiva, fecha: Date) boolean
     }
 
     class Asignatura {
         -nombre: String
         -codigoEuropeo: String
-        -curso: int
         +agregarRequisito(Asignatura) void
-        +eliminarRequisito(Asignatura) void
+        +verificarRequisitos(Alumno) boolean
     }
 
-    class AsignaturaImpartida {
+    class ImparticionAsignatura {
         -codigoInterno: String
-        -fechaInicio: Date
-        -fechaFin: Date
+        -curso: int
+        -fechaInicioImparticion: Date
+        -fechaFinImparticion: Date
     }
 
     class Ciclo {
         -nombre: String
         -tipo: TipoCiclo
         -codigoInterno: String
+        -anio: int
     }
 
     class Profesor {
@@ -278,27 +279,32 @@ classDiagram
         -telefono: String
         -email: String
         -dni: String
-        -nss: String
+        -numeroSeguridadSocial: String
         -codigoProfesor: String
-        -antiguedad: int
+        -antiguedadDocente: int
         +esTutor() boolean
-        +antiguedadComoTutor() int
+        +antiguedadComoDocente() int
     }
 
-    class OcupacionAula {
-        -dia: Horario
-        -hora: Hora
+    class Clase {
+        -dia: DiaSemana
+        -hora: HoraLectiva
+        -fecha: Date
+        +obtenerUbicacionProfesor(Profesor, Date) Aula
+    }
+
+    class HistorialProfesorAsignatura {
         -fechaInicio: Date
         -fechaFin: Date
     }
 
     Asignatura "1" *-- "0..*" Asignatura : requisitos
-    Asignatura "1" -- "1..*" AsignaturaImpartida
-    AsignaturaImpartida "1" -- "1" Ciclo
-    AsignaturaImpartida "1" -- "1..*" Profesor
-    AsignaturaImpartida "1" -- "1" OcupacionAula
-    OcupacionAula "1" -- "1" Aula
-    Ciclo "1" -- "1..*" Profesor : tutores
-
-    Profesor "1" -- "0..1" Ciclo : tutor_de
+    Asignatura "1" -- "1..*" ImparticionAsignatura
+    ImparticionAsignatura "1" -- "1" Ciclo
+    ImparticionAsignatura "1" -- "1..*" HistorialProfesorAsignatura
+    HistorialProfesorAsignatura "1" -- "1" Profesor
+    Clase "1" -- "1" ImparticionAsignatura
+    Clase "1" -- "1" Aula
+    Ciclo "1" -- "0..*" Profesor : tieneTutor
+    Profesor "1" -- "0..1" Ciclo : esTutorDe
 ```
