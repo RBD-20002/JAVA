@@ -217,94 +217,26 @@
     ```
   
 ```mermaid
-classDiagram
-    class DiaSemana {
-        <<enumeration>>
-        LUNES
-        MARTES
-        MIERCOLES
-        JUEVES
-        VIERNES
-    }
-
-    class HoraLectiva {
-        <<enumeration>>
-        HORA_1
-        HORA_2
-        HORA_3
-        HORA_4
-        HORA_5
-        HORA_6
-    }
-
-    class TipoCiclo {
-        <<enumeration>>
-        GRADO_SUPERIOR
-        GRADO_MEDIO
-        INICIACION_PROFESIONAL
-    }
-
-    class Aula {
-        -codigo: String
-        -nombre: String
-        -numero: int
-        -metrosCuadrados: float
-        +estaDisponible(dia: DiaSemana, hora: HoraLectiva, fecha: Date) boolean
-    }
-
-    class Asignatura {
-        -nombre: String
-        -codigoEuropeo: String
-        +agregarRequisito(Asignatura) void
-        +verificarRequisitos(Alumno) boolean
-    }
-
-    class ImparticionAsignatura {
-        -codigoInterno: String
-        -curso: int
-        -fechaInicioImparticion: Date
-        -fechaFinImparticion: Date
-    }
-
-    class Ciclo {
-        -nombre: String
-        -tipo: TipoCiclo
-        -codigoInterno: String
-        -anio: int
-    }
-
-    class Profesor {
-        -nombre: String
-        -direccion: String
-        -telefono: String
-        -email: String
-        -dni: String
-        -numeroSeguridadSocial: String
-        -codigoProfesor: String
-        -antiguedadDocente: int
-        +esTutor() boolean
-        +antiguedadComoDocente() int
-    }
-
-    class Clase {
-        -dia: DiaSemana
-        -hora: HoraLectiva
-        -fecha: Date
-        +obtenerUbicacionProfesor(Profesor, Date) Aula
-    }
-
-    class HistorialProfesorAsignatura {
-        -fechaInicio: Date
-        -fechaFin: Date
-    }
-
-    Asignatura "1" *-- "0..*" Asignatura : requisitos
-    Asignatura "1" -- "1..*" ImparticionAsignatura
-    ImparticionAsignatura "1" -- "1" Ciclo
-    ImparticionAsignatura "1" -- "1..*" HistorialProfesorAsignatura
-    HistorialProfesorAsignatura "1" -- "1" Profesor
-    Clase "1" -- "1" ImparticionAsignatura
-    Clase "1" -- "1" Aula
-    Ciclo "1" -- "0..*" Profesor : tieneTutor
-    Profesor "1" -- "0..1" Ciclo : esTutorDe
-```
+flowchart TD
+    A[Inicio] --> B["calcularDescuento(precio, unidades, tipoCliente)"]
+    B --> C{¿precio <= 0 o unidades <= 0?}
+    C -->|Sí| D["Lanzar IllegalArgumentException"]
+    C -->|No| E["descuento = 0"]
+    E --> F{¿unidades >= 10?}
+    F -->|Sí| G["descuento += 0.10"]
+    F -->|No| H["Saltar descuento por volumen"]
+    G --> I{¿tipoCliente != null?}
+    H --> I
+    I -->|No| J["Saltar descuento por cliente"]
+    I -->|Sí| K{¿tipoCliente == 'VIP'?}
+    K -->|Sí| L["descuento += 0.20"]
+    K -->|No| M{¿tipoCliente == 'FRECUENTE'?}
+    M -->|Sí| N["descuento += 0.10"]
+    M -->|No| O["Saltar descuento frecuente"]
+    L --> P["Calcular precio final"]
+    N --> P
+    O --> P
+    J --> P
+    P --> Q["return precio * unidades * (1 - descuento)"]
+    Q --> R[Fin]
+    D --> R
