@@ -3,43 +3,42 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static final String NOMBRE_FICHERO = "Usuarios.txt";
-
-    public static void main(String[] args) {
-
-        Gestion gt = new Gestion();
-        InfoMenus info = new InfoMenus();
+    public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-
-        File fichero = new File(NOMBRE_FICHERO);
+        File file = new File("datos.txt");
         try {
-            if (fichero.createNewFile()) {
-                System.out.println("El fichero ha sido creado");
-            } else {
-                System.out.println("El fichero ya existe");
-            }
+            if (file.createNewFile()) System.out.println("FICHERO CREADO " + file.getAbsolutePath());
+            else System.out.println("EL FICHERO YA EXISTE");
         } catch (IOException e) {
-            System.out.println("ERROR: en creacion de fichero");
+            System.out.println("ERROR AL CREAR EL FICHERO");
         }
 
-        int opcion = -1;
-        do {
-            try {
-                info.menu1();
-                System.out.println("Introduce una opcion: ");
-                opcion = Integer.parseInt(sc.nextLine());
-                switch (opcion) {
-                    case 1 -> gt.registrarUsuario();
-                    case 2 -> gt.mostrarUsuarios();
-                    case 3 -> gt.buscarUsuario();
-                    case 4 -> System.out.println("Adios");
-                    default -> System.out.println("Opcion invalida");
+        int opcion;
+        do{
+            try{
+                metodos.menu();
+                System.out.println("ELIGE UNA OPCION");
+                opcion = metodos.leerEntero(sc);
+                switch (opcion){
+                    case 1:
+                        metodos.agregarUsuario();
+                        break;
+                    case 2:
+                        metodos.mostrarUsuario();
+                        break;
+                    case 3:
+                        metodos.buscarUsuario();
+                        break;
+                    case 4:
+                        System.out.println("ADIOS");
+                        break;
+                    default:
+                        System.out.println("OPCION INVALIDA");
                 }
-            } catch (NumberFormatException e) {
-                System.out.println("ERROR: Dato introducido invalido");
+            }catch (NumberFormatException e){
+                System.out.println("ERROR DATO INVALIDO");
                 opcion = -1;
             }
-        } while (opcion != 4);
-
+        }while(opcion != 4);
     }
 }
