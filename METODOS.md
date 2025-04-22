@@ -216,27 +216,3 @@
    Comparator<?> cmp = pq.comparator()
     ```
   
-```mermaid
-flowchart TD
-    A[Inicio] --> B["calcularDescuento(precio, unidades, tipoCliente)"]
-    B --> C{¿precio <= 0 o unidades <= 0?}
-    C -->|Sí| D["Lanzar IllegalArgumentException"]
-    C -->|No| E["descuento = 0"]
-    E --> F{¿unidades >= 10?}
-    F -->|Sí| G["descuento += 0.10"]
-    F -->|No| H["Saltar descuento por volumen"]
-    G --> I{¿tipoCliente != null?}
-    H --> I
-    I -->|No| J["Saltar descuento por cliente"]
-    I -->|Sí| K{¿tipoCliente == 'VIP'?}
-    K -->|Sí| L["descuento += 0.20"]
-    K -->|No| M{¿tipoCliente == 'FRECUENTE'?}
-    M -->|Sí| N["descuento += 0.10"]
-    M -->|No| O["Saltar descuento frecuente"]
-    L --> P["Calcular precio final"]
-    N --> P
-    O --> P
-    J --> P
-    P --> Q["return precio * unidades * (1 - descuento)"]
-    Q --> R[Fin]
-    D --> R
