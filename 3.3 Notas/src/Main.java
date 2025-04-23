@@ -16,16 +16,16 @@ public class Main {
                 opcion = Integer.parseInt(sc.nextLine());
                 switch (opcion) {
                     case 1:
-                        MetodoFiles.registrarEstudiante(sc);
+                        GestionFile.registrarEstudiante(sc);
                         break;
                     case 2:
-                        MetodoFiles.registrarNota(sc);
+                        GestionFile.registrarNota(sc);
                         break;
                     case 3:
-                        MetodoFiles.mostrarNotasEstudiante(sc);
+                        GestionFile.mostrarNotasEstudiante(sc);
                         break;
                     case 4:
-                        MetodoFiles.mostrarEstudiantes();
+                        GestionFile.mostrarEstudiantes();
                         break;
                     case 5:
                         System.out.println("HATA LUEGO ......");
