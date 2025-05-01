@@ -1,8 +1,21 @@
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        try{
+            if(!Files.exists(MetodosFichero.archivo)) {
+                Files.createFile(MetodosFichero.archivo);
+                System.out.println("El archivo se creo con exito");
+            } else {
+                System.out.println("El archivo ya exite");
+            }
+        }catch (IOException e){
+            System.out.println("ERROR: fallo al crear el archivo");
+        }
 
         int opcion = -1;
         do{

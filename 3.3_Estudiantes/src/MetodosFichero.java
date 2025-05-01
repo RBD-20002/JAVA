@@ -15,8 +15,9 @@ public class MetodosFichero {
 
     public static void registrarEstudiante() {
         try{
-            String nuevoEstudiante = leerNombre(sc)+System.lineSeparator();
-            if(existeEstudiante(nuevoEstudiante)) {
+            String nombre = leerNombre(sc);
+            String nuevoEstudiante = nombre+System.lineSeparator();
+            if(existeEstudiante(nombre)) {
                 System.out.println("El estudiante ya esta registrado");
             } else {
                 Files.write(archivo,nuevoEstudiante.getBytes(),StandardOpenOption.CREATE,StandardOpenOption.APPEND);
@@ -29,11 +30,44 @@ public class MetodosFichero {
 
     public static void anadirNota() {
         todoEstudiante();
-        System.out.println("");
+        System.out.println("ELIGE UN ESTUDIANTE: ");
+        String nombre = sc.nextLine();
+        if(!existeEstudiante(nombre)){
+            System.out.println("El estudiante no existe");
+            return;
+        }
+        String ficheroNuevo = "notas_"+nombre+".txt";
+
+        double nota = leerNota(sc);
+        try{
+            String notaTexto = nota+System.lineSeparator();
+            Files.write(Paths.get(ficheroNuevo),notaTexto.getBytes(),StandardOpenOption.APPEND,StandardOpenOption.CREATE);
+            System.out.println("Se escribio correctamente en el archivo");
+        } catch (IOException e) {
+            System.out.println("ERROR: fallo al escribir en el archivo");
+        }
     }
 
     public static void mostrarNotaEstudiante() {
+        todoEstudiante();
+        System.out.println("INTRODUCE EL NOMBRE DE UN ESTUDIANTE: ");
+        String nombre = sc.nextLine();
 
+        if(!existeEstudiante(nombre)){
+            System.out.println("El estudiante no existe");
+            return;
+        }
+        Path ficheroNuevo = Paths.get("notas_"+nombre+".txt");
+        System.out.println("NOTAS:");
+        try{
+            if(Files.notExists(ficheroNuevo) || Files.size(ficheroNuevo) == 0){
+                System.out.println("No hay notas registradas");
+                return;
+            }
+            Files.lines(ficheroNuevo).forEach(estudiante -> System.out.println("-"+estudiante));
+        }catch (IOException e){
+            System.out.println("ERROR: fallo al leer el archivo ");
+        }
     }
 
     public static void todoEstudiante() {
@@ -44,8 +78,8 @@ public class MetodosFichero {
                 return;
             }else{
                 System.out.println("ESTUDIANTES: ");
-                for(int i=0; i<estudiantes.size(); i++){
-                    System.out.println((i+1)+" "+estudiantes.get(i));
+                for(String estudiante : estudiantes){
+                    System.out.println("- "+estudiante);
                 }
             }
         }catch (IOException e){
@@ -89,9 +123,9 @@ public class MetodosFichero {
 
     public static boolean existeEstudiante(String nombre) {
         try{
-            List<String> estudiantes = Files.readAllLines(Paths.get("estudiantes.txt"));
+            List<String> estudiantes = Files.readAllLines(archivo);
             for(String estudiante : estudiantes){
-                if(estudiante.equalsIgnoreCase(nombre)) {
+                if(estudiante.trim().equalsIgnoreCase(nombre)) {
                     return true;
                 }
             }
