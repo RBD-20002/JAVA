@@ -2,34 +2,25 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
-        int opcion = -1;
 
+        int opcion = -1;
         do{
             try{
-                InfoMenu.menu();
-                System.out.println("ELIGE UNA OPCION: ");
+                InfoMenu.menu1();
+                System.out.println("INTRODUCE UNA OPCION: ");
                 opcion = Integer.parseInt(sc.nextLine());
                 switch (opcion){
-                    case 1:
-                        Configuracion.mostrarPropiedades();
-                        break;
-                    case 2:
-                        Configuracion.modificarPropiedades();
-                        break;
-                    case 3:
-                        Configuracion.restaurarConfiguracion();
-                        break;
-                    case 4:
-                        System.out.println("Hasta Luego......");
-                        break;
-                    default:
-                        System.out.println("Opcion invalida");
+                    case 1 -> MetodosFichero.crearFichero();
+                    case 2 -> MetodosFichero.mostrarPropiedades();
+                    case 3 -> MetodosFichero.modificarConfiguracion();
+                    case 4 -> MetodosFichero.mostralHistorial();
+                    case 5 -> System.out.println("HASTA LUEGO......");
+                    default -> System.out.println("OPCION INVALIDA");
                 }
             }catch (NumberFormatException e){
-                System.out.println("ERROR: dato introducido es invalido");
+                System.out.println("ERROR: DATO INTRODUCIDO INVALIDO");
             }
-        }while (opcion != 4);
+        }while (opcion != 5);
     }
 }
