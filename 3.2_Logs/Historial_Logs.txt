@@ -1,2 +1,0 @@
-[2025-04-30 23:49] Login -> Usuario: Rei
-[2025-04-30 23:49] Logout -> Usuario: Ricardo
