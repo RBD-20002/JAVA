@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/1.1_Libro/1.1_Libro.iml" filepath="$PROJECT_DIR$/1.1_Libro/1.1_Libro.iml" />
-      <module fileurl="file://$PROJECT_DIR$/1.2_Bancario/1.2_Bancario.iml" filepath="$PROJECT_DIR$/1.2_Bancario/1.2_Bancario.iml" />
-      <module fileurl="file://$PROJECT_DIR$/1.3_Contador/1.3_Contador.iml" filepath="$PROJECT_DIR$/1.3_Contador/1.3_Contador.iml" />
       <module fileurl="file://$PROJECT_DIR$/1_Biblioteca/1_Biblioteca.iml" filepath="$PROJECT_DIR$/1_Biblioteca/1_Biblioteca.iml" />
-      <module fileurl="file://$PROJECT_DIR$/2.1_Vehiculos/2.1_Vehiculos.iml" filepath="$PROJECT_DIR$/2.1_Vehiculos/2.1_Vehiculos.iml" />
-      <module fileurl="file://$PROJECT_DIR$/2.2_Figura/2.2_Figura.iml" filepath="$PROJECT_DIR$/2.2_Figura/2.2_Figura.iml" />
-      <module fileurl="file://$PROJECT_DIR$/2.3_Figuras/2.3_Figuras.iml" filepath="$PROJECT_DIR$/2.3_Figuras/2.3_Figuras.iml" />
-      <module fileurl="file://$PROJECT_DIR$/3.1_Usuarios_FILE/3.1_Usarios_FILE.iml" filepath="$PROJECT_DIR$/3.1_Usuarios_FILE/3.1_Usarios_FILE.iml" />
-      <module fileurl="file://$PROJECT_DIR$/3.1_Usuarios_FILE2/3.1_Usuarios_FILE2.iml" filepath="$PROJECT_DIR$/3.1_Usuarios_FILE2/3.1_Usuarios_FILE2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.1_Usuarios_FILE/3.1_Usuarios_FILE2.iml" filepath="$PROJECT_DIR$/3.1_Usuarios_FILE/3.1_Usuarios_FILE2.iml" />
       <module fileurl="file://$PROJECT_DIR$/3.1_Usuarios_FILES/3.1_Usuarios_FILES.iml" filepath="$PROJECT_DIR$/3.1_Usuarios_FILES/3.1_Usuarios_FILES.iml" />
       <module fileurl="file://$PROJECT_DIR$/3.2_Login_FILE/3.2_Login_FILE.iml" filepath="$PROJECT_DIR$/3.2_Login_FILE/3.2_Login_FILE.iml" />
       <module fileurl="file://$PROJECT_DIR$/3.2_Login_FILES/3.2_Login_FILES.iml" filepath="$PROJECT_DIR$/3.2_Login_FILES/3.2_Login_FILES.iml" />
@@ -18,7 +11,8 @@
       <module fileurl="file://$PROJECT_DIR$/3.3_Estudiantes_FILES/3.3_Estudiantes_FILES.iml" filepath="$PROJECT_DIR$/3.3_Estudiantes_FILES/3.3_Estudiantes_FILES.iml" />
       <module fileurl="file://$PROJECT_DIR$/3.4_Tareas_FILE/3.4_Tareas_FILE.iml" filepath="$PROJECT_DIR$/3.4_Tareas_FILE/3.4_Tareas_FILE.iml" />
       <module fileurl="file://$PROJECT_DIR$/3.4_Tareas_FILES/3.4_Tareas_FILES.iml" filepath="$PROJECT_DIR$/3.4_Tareas_FILES/3.4_Tareas_FILES.iml" />
-      <module fileurl="file://$PROJECT_DIR$/3.4_Usuarios_FILE2/3.4_Usuarios_FILE2.iml" filepath="$PROJECT_DIR$/3.4_Usuarios_FILE2/3.4_Usuarios_FILE2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.5_Biblioteca_FILE/3.5_Biblioteca_FILE.iml" filepath="$PROJECT_DIR$/3.5_Biblioteca_FILE/3.5_Biblioteca_FILE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.6_Propiedades_FILE/3.6_Propiedades_FILE.iml" filepath="$PROJECT_DIR$/3.6_Propiedades_FILE/3.6_Propiedades_FILE.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/JAVA.iml" filepath="$PROJECT_DIR$/.idea/JAVA.iml" />
       <module fileurl="file://$PROJECT_DIR$/Practica_1/Practica_1.iml" filepath="$PROJECT_DIR$/Practica_1/Practica_1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Practica_2/Practica_2.iml" filepath="$PROJECT_DIR$/Practica_2/Practica_2.iml" />

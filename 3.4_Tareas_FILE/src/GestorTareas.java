@@ -10,7 +10,7 @@ public class GestorTareas {
     public static final File fichero = new File("3.4_Tareas_FILE","Tareas.txt");
     private static Scanner sc = new Scanner(System.in);
     private static LocalDateTime fecha = LocalDateTime.now();
-    private static DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+    private static DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm");
 
     public static void agregarTarea() {
         String tarea = EntradaDatos.leerTarea();
@@ -78,7 +78,7 @@ public class GestorTareas {
     }
 
     public static void crearCopiaSeguridad() {
-        if(!fichero.exists() && fichero.length() == 0){
+        if(!fichero.exists() || fichero.length() == 0){
             System.out.println("EL FICHERO NO EXISTE O ESTA VACIO");
         }
         String fechaFormateada = fecha.format(formato);
