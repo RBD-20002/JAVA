@@ -16,6 +16,7 @@ public class Main {
                     case 2 -> GestionUsuarios.mostrarUsuarios();
                     case 3 -> GestionUsuarios.eliminarUsuarios();
                     case 4 -> GestionUsuarios.buscarUsuarios();
+                    case 5 -> System.out.println("HASTA LUEGO......");
                     default -> System.out.println("OPCION INVALIDA");
                 }
             }catch(NumberFormatException e){
