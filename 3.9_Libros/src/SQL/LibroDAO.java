@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.*;
 
 public class LibroDAO implements ComandosSQL{
-    private Connection connection;
+    private final Connection connection;
 
     public LibroDAO() throws SQLException {
         Properties propiedades = new Properties();
@@ -45,7 +45,6 @@ public class LibroDAO implements ComandosSQL{
             prop.store(output, "Configuración de la base de datos de libros");
         }
     }
-
 
     public void crearTablaSiNoExiste() throws SQLException{
         String sql = """

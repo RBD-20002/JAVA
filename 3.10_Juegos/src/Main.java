@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        GestionLibros gl = new GestionLibros();
+        GestionJuegos GJ = new GestionJuegos();
         Scanner sc = new Scanner(System.in);
 
         int opcion = -1;
@@ -11,15 +11,15 @@ public class Main {
                 InfoMenu.menu();
                 opcion = Integer.parseInt(sc.nextLine());
                 switch (opcion){
-                    case 1 -> gl.agregarLibro();
-                    case 2 -> gl.modificarLibro();
-                    case 3 -> gl.borrarLibro();
-                    case 4 -> gl.buscarPorId();
-                    case 5 -> gl.listarLibros();
-                    case 6 -> gl.buscarPorPrecio();
-                    case 7 -> gl.buscarPorAutor();
+                    case 1 -> GJ.agregarJuego();
+                    case 2 -> GJ.modificarJuego();
+                    case 3 -> GJ.eliminarJuego();
+                    case 4 -> GJ.buscarJuego();
+                    case 5 -> GJ.listarJuego();
+                    case 6 -> GJ.buscarPorConsola();
+                    case 7 -> GJ.buscarPorPrecio();
                     case 8 -> System.out.println("HASTA LUEGO.....");
-                    default -> System.out.println("OPCION INVALIDA");
+                    default -> System.out.println("OPCION INVALIDO");
                 }
             }catch (NumberFormatException e){
                 System.out.println(e.getMessage());
