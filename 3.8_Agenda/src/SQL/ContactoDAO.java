@@ -6,7 +6,6 @@ import java.util.*;
 public class ContactoDAO implements MetodosSQL {
     private Connection connection;
 
-
     public ContactoDAO() throws SQLException {
         Properties propiedades = new Properties();
         InputStream input = null;
@@ -46,10 +45,6 @@ public class ContactoDAO implements MetodosSQL {
 
         } catch (IOException e) {
             throw new SQLException("Error al manejar propiedades: " + e.getMessage(), e);
-        } finally {
-            if (input != null) {
-                try { input.close(); } catch (IOException e) {}
-            }
         }
     }
 
