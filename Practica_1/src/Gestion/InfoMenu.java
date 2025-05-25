@@ -40,7 +40,7 @@ public class InfoMenu {
         System.out.println("""
                 |---OPCIONES---|
                 |1. Materiales |
-                |2. Usuario    |
+                |2. SQL.Usuario    |
                 |3. Regresar   |
                 |--------------|
                 """);
